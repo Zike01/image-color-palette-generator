@@ -16,7 +16,7 @@ Bootstrap(app)
 Base = declarative_base()
 
 # CONFIGURE DATABASE
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///images.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL_1', 'sqlite:///images.db')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
