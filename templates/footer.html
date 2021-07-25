@@ -17,3 +17,8 @@
         <a href="https://github.com/Zike01" , target="_blank"><i class="fab fa-github fa-3x"></i></a>
     </footer>
 {% endblock %}
+
+{% block scripts %}
+    {{super()}}
+    <script src="{{ url_for('static', filename='js/index.js') }}"></script>
+{% endblock %}
