@@ -16,6 +16,6 @@ class PaletteGenerator:
 
     def generate_palette(self):
         colors = colorgram.extract(f"static/images/{self.image_name}.jpg", self.num_colors)
-        colors.sort(key=lambda c: c.rgb.r, reverse=True)
+        colors.sort(key=lambda c: c.hsl.l, reverse=True)
         return [f"{color.rgb.r, color.rgb.g, color.rgb.b}" for color in colors]
         

@@ -23,7 +23,7 @@
                                 <div class="card-palette">
                                     {% for color in colors: %}
                                         {% if color.image_id == image.id: %}
-                                        <div class="color" id="color" onclick="copyColor()" style="background-color: rgb{{ color.rgb_color }}; color: rgb{{ color.rgb_color }}">
+                                        <div class="color" id="color{{loop.index}}" onclick="copyColor('color{{loop.index}}')" style="background-color: rgb{{ color.rgb_color }}; color: rgb{{ color.rgb_color }}">
                                         </div>
                                         {% endif %}
                                     {% endfor %}
