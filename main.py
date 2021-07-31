@@ -118,7 +118,6 @@ def edit_image():
 @app.route("/delete")
 def delete_image():
     id = request.args.get('id')
-    
     image_to_delete = Image.query.get(id)
     Colors.query.filter_by(image_id=id).delete()
     
