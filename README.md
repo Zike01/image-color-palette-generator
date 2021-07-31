@@ -8,3 +8,11 @@ A website that finds the most common colours in an uploaded image.
 - [Flask Bootstrap](https://pythonhosted.org/Flask-Bootstrap/)
 - [SQLAlchemy](https://flask-sqlalchemy.palletsprojects.com/en/2.x/)
 - [Colorgram](https://pypi.org/project/colorgram.py/)
+
+## Walkthrough
+
+### Add a new image.
+![addImage](demo/add-image.gif)
+
+### Click to copy a color from the generated color palette.
+![copyColor](demo/copy-color.gif)
