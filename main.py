@@ -26,7 +26,7 @@ class Image(db.Model, Base):
     __tablename__ = 'image'
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100), nullable=False)
-    img_url = db.Column(db.String(150), nullable=False)
+    img_url = db.Column(db.String(500), nullable=False)
     
     # Establish a bidirectional one-to-many relationship 
     # between each image and colors
