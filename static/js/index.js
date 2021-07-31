@@ -1,5 +1,5 @@
-function copyColor(color) {
-    const div = document.getElementById(color);
+function copyColor(index) {
+    const div = document.getElementById("color" + index);
 
     let bgColor = window.getComputedStyle(div).backgroundColor;
     const text  = document.createElement('textarea');
