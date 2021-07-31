@@ -12,6 +12,7 @@
     <div class="container">
         <div class="row">
             {% for image in images: %}
+                {% set outer_loop = loop %}
                 <div class="col-lg-4 col-md-6">
                     <div class="card-container">
                         <div class="card card-front card-fade">
@@ -23,11 +24,12 @@
                                 <div class="card-palette">
                                     {% for color in colors: %}
                                         {% if color.image_id == image.id: %}
-                                        <div class="color" id="color{{loop.index}}" onclick="copyColor('{{loop.index}}')" style="background-color: rgb{{ color.rgb_color }}; color: rgb{{ color.rgb_color }}">
+                                        <div class="color" id="color{{loop.index}}" onclick="copyColor('{{loop.index}}', '{{outer_loop.index}}')" style="background-color: rgb{{ color.rgb_color }}; color: rgb{{ color.rgb_color }}">
                                         </div>
                                         {% endif %}
                                     {% endfor %}
                                 </div>
+                                <p class="copied" id="copied{{outer_loop.index}}"><p>
                                 <a class="btn btn-primary btn-sm" href="{{ url_for('edit_image', id=image.id) }}" role="button">Edit</a>
                                 <a class="btn btn-danger btn-sm" href="{{ url_for('delete_image', id=image.id) }}" role="button">Delete</a>
                             </div>
